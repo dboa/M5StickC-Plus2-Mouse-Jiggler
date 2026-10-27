@@ -1,6 +1,6 @@
 # M5StickC Plus 2 Bluetooth Mouse Jiggler
 
-<img width="512" height="512" alt="Mouse Jiggler" src="https://github.com/user-attachments/assets/e4b2b693-f91e-4e53-a023-eecac9d788bb" />
+[Work in progress]
 
 
 This is a fork of M5StickC Plus Bluetooth Mouse Jiggler, trying to make a version for M5StickC Plus 2 Since that one does not work.
