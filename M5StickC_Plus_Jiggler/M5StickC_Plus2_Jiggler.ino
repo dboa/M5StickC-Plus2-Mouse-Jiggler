@@ -1,8 +1,8 @@
-#include <M5StickCPlus.h>
+#include <M5StickCPlus2.h>
 #include <BleMouse.h>
 #include <Preferences.h>
 
-BleMouse bleMouse("M5StickC Plus Jiggler", "M5Jiggler", 100);
+BleMouse bleMouse("M5StickC Plus2 Jiggler", "M5p2Jiggler", 100);
 Preferences prefs;
 
 // Define intervals in milliseconds
@@ -75,7 +75,7 @@ void drawCard(int x, int y, int w, int h);
 void setup() {
   M5.begin();
   M5.Lcd.setRotation(3);
-  M5.Axp.ScreenBreath(defaultBrightness);
+  M5.Display.setBrightness(defaultBrightness);
   M5.Lcd.fillScreen(TFT_BLACK);
 
   loadSettings();
@@ -165,7 +165,7 @@ void loop() {
 
 void wakeScreen() {
   if (screenIsOff) {
-    M5.Axp.ScreenBreath(defaultBrightness);
+    M5.Display.setBrightness(defaultBrightness);
     screenIsOff = false;
     updateDisplay(true);
   }
@@ -176,7 +176,7 @@ void sleepScreenIfIdle() {
   if (screenIsOff || keepScreenAwake) return;
 
   if (millis() - lastInteractionTime > screenSleepTimeout) {
-    M5.Axp.ScreenBreath(0);
+    M5.Display.setBrightness(0);
     screenIsOff = true;
   }
 }
@@ -294,7 +294,7 @@ void drawConnectionStatus(bool connected) {
 }
 
 void drawBatteryStatus() {
-  int voltageMv = (int)(M5.Axp.GetBatVoltage() * 1000.0f);
+  int voltageMv = (int)(M5.Power.getBatteryVoltage() * 1000.0f);
   int pct = (voltageMv - 3300) * 100 / (4200 - 3300);
 
   if (pct < 0) pct = 0;
