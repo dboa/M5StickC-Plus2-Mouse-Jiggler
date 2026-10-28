@@ -17,9 +17,10 @@ Hardware (official M5Stack product photo):
 ## Features
 
 - BtnA short press: toggle jiggle ON/OFF
-- BtnA long press (>1s): cycle jiggle distance (5/10/25/50 px)
+- BtnA long press (>1s): toggle display lock (always-on vs auto-sleep)
 - BtnB short press: cycle jiggle interval (5s/15s/30s/60s/5m/10m)
-- BtnB long press (>1s): toggle display lock (always-on vs auto-sleep)
+- BtnPwr short pres:  cycle jiggle distance (5/10/25/50 px)
+- BtnPwr long press (>51s): power off
 - Settings persistence (interval + distance survive reboot)
 - Non-blocking jiggle motion loop
 - Graphic UI with cards, icons, status badge, countdown, and progress capsule
@@ -42,9 +43,9 @@ Hardware (official M5Stack product photo):
 2. Pair with your computer as a Bluetooth mouse.
 3. Use controls:
    - `BtnA`: toggle ON/OFF
-   - `Hold BtnA`: distance
+   - `BtnPwr`: distance
    - `BtnB`: interval
-   - `Hold BtnB`: display lock mode
+   - `Hold BtnA`: display lock mode
 
 ## License Compliance
 
